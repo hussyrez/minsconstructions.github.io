@@ -87,9 +87,21 @@ Every section uses:
 - Side-by-side on desktop, stacked on mobile: `col-12 col-sm-6` with `w-100`
 
 ### Hero Sections
-- Home: `.hero` — sticky, dark navy, contains `.hero-box` with white border + rounded corners
+- Home: `.hero` — sticky, dark gradient background, Instrument Serif H1 with animated fade-up, glassmorphism `.hero-box`, orange accent line
+- About: `.about-hero` — same dark gradient as homepage but not sticky, Instrument Serif H1, also reused for the dark CTA section at page bottom
 - Contact: `.contact-hero` — dark navy, centred text, no sticky
-- Both use `padding: 3.5-5rem 0`
+- All hero variants use `padding: 3.5-5rem 0`
+
+### Feature Cards (About page)
+- `.feature-card` — white card with subtle shadow, hover lift (`translateY(-4px)`), generous padding
+- `.feature-accent` — 40px orange line at top of each card
+- 3 cards in a row on desktop (`col-md-4`), stacked on mobile
+- Used for: Proven Experience, Quality Craftsmanship, Premium Materials
+
+### Project Photo Grid (About page)
+- `.about-photo` — `object-fit: cover` at 200px height, hover scale (1.03)
+- 4 photos in a row on desktop (`col-md-3`), 2 per row on mobile
+- Displayed on `.gallery-section` dark background for contrast
 
 ### Parallax Image (Home)
 - `.content-overlay` wraps everything below hero (z-index: 1, bg-white)

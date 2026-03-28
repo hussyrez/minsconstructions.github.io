@@ -21,12 +21,14 @@ Static website for **Mins Constructions**, a licenced rendering company in South
 - **Schema.org structured data**: LocalBusiness, WebSite, BreadcrumbList, FAQPage
 
 ### About Us (`about.html`)
-- **Welcome section** — company story and values
-- **After photos** — showcases completed work from gallery
+- **Dark hero** — matches homepage gradient background, Instrument Serif H1 with orange accent, animated accent line
+- **Company story** — 3 paragraphs about the team, approach, and values
+- **Feature cards** — 3 horizontal cards (Proven Experience, Quality Craftsmanship, Premium Materials) with orange accent lines and hover lift
+- **Project showcase** — 4-photo grid on dark gallery-section background (Berwick, Hampton, Warragul)
 - **Rendering services detail** — 4 technique cards (Smooth, Textured, Pigmented Finish, Membrane Colouring)
 - **Why Choose Us** — 6 items in 2 columns with orange checkmarks
 - **Customer reviews** — auto-scrolling carousel (6 reviews, duplicated for seamless loop, pauses on hover)
-- **CTA section** — "Ready to Get Started?"
+- **Dark CTA section** — "Ready to Get Started?" on dark gradient background
 
 ### Contact (`contact.html`)
 - **Dark hero banner** — "Get In Touch" heading

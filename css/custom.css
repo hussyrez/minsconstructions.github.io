@@ -542,6 +542,63 @@ footer a:hover {
   color: var(--mc-primary);
 }
 
+/* About page */
+.about-hero {
+  background:
+    radial-gradient(ellipse at 50% 18%, rgba(231, 127, 36, 0.06) 0%, transparent 50%),
+    linear-gradient(175deg, #0f0f22 0%, #1a1a2e 50%, #1d182b 100%);
+  color: #fff;
+  padding: 5rem 0;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+}
+
+.feature-accent {
+  width: 40px;
+  height: 3px;
+  background: var(--mc-primary);
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+  color: var(--mc-dark);
+}
+
+.feature-card p {
+  color: #666;
+  line-height: 1.75;
+  margin-bottom: 0;
+  font-size: 0.92rem;
+}
+
+.about-photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.about-photo:hover {
+  transform: scale(1.03);
+}
+
 /* Contact page */
 .contact-hero {
   background-color: var(--mc-dark);
