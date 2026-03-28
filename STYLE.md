@@ -6,8 +6,8 @@ This document defines the design system, conventions, and patterns used across t
 
 | CSS Variable | Hex | Usage |
 |---|---|---|
-| `--mc-primary` | `#e77f24` | Buttons, accent text, icons, links, service icons, contact icons |
-| `--mc-dark` | `#1a1a2e` | Hero backgrounds, dark sections |
+| `--mc-primary` | `#e77f24` | Buttons, accent text, icons, links, service numbers, gallery arrows |
+| `--mc-dark` | `#1a1a2e` | Hero backgrounds, gallery section, dark sections |
 | Bootstrap `bg-dark` | `#212529` | Navbar, footer |
 | Bootstrap `bg-light` | `#f8f9fa` | Alternating section backgrounds |
 | White | `#ffffff` | Default section backgrounds, cards |
@@ -38,7 +38,7 @@ Alternate section backgrounds for visual separation:
 ```
 Dark hero → White section → Light grey section → White section → ...
 ```
-Use `bg-white`, `bg-light`, or no class (default white).
+Use `bg-white`, `bg-light`, or no class (default white). The gallery section uses `gallery-section` (dark navy) as a dramatic break in the pattern.
 
 ### Container Pattern
 Every section uses:
@@ -53,14 +53,27 @@ Every section uses:
 
 ## Component Patterns
 
-### Cards (Services, Contact)
-- `.card .border-0 .shadow-sm` — no border, subtle shadow
-- `.card-body .p-4` — generous padding
-- Hover lift: `transform: translateY(-4px)` with `transition: transform 0.2s ease`
+### Interactive Services (Home page)
+- `.services-split` — flex container (left cards 38%, right detail panel), scroll-triggered via IntersectionObserver
+- `.svc-card` — numbered cards (01, 02, 03) with orange left border on active state, staggered slide-in animation
+- `.svc-detail` — detail panel with description, checkmark list, CTA button; switches on card click with fade animation
+- Cards slide in from left, detail slides in from right when section enters viewport
+- Responsive: stacks vertically on mobile (`flex-direction: column` at 768px)
 
-### Service Icons (Home page)
-- 60x60px orange circle: `.service-icon`
-- Unicode character inside, white on orange
+### Gallery Reel (Home page)
+- `.gallery-section` — dark navy background for photo contrast
+- `.greel` — horizontal scrollable strip with `scroll-snap-type: x mandatory`, hidden scrollbar
+- `.greel-slide` — 320×260px cards with `object-fit: cover`, rounded corners, location caption overlay
+- `.greel-arrow` — circular nav buttons, auto-hide at scroll edges, orange on hover
+- Hover effect: card scales 1.03, image scales 1.06, shadow lifts
+- Click opens lightbox modal (`.gmodal`)
+
+### Gallery Modal Lightbox
+- `.gmodal` — fixed fullscreen overlay with dark backdrop + `backdrop-filter: blur(12px)`
+- `.gmodal-body` — centred image with `object-fit: contain`, scale-up entry animation
+- Navigation: left/right arrows (loop), close button, keyboard (arrows + Escape), touch swipe
+- Image transitions: opacity + scale crossfade on nav (180ms delay)
+- Responsive: larger image area on mobile, smaller nav buttons
 
 ### Contact Icons
 - 44x44px orange circle: `.contact-icon`
@@ -83,11 +96,11 @@ Every section uses:
 - Hero is `position: sticky; top: 0; z-index: 0` — content scrolls over it
 - Image uses `<img>` tag (not background-image) for full visibility, no cropping
 
-### Gallery Reel (Home)
-- Single item carousel with Prev/Next buttons
-- Before photo on top, after photo on bottom
-- `.gallery-reel` max-width 600px, centred
-- Controlled by `js/gallery.js` reading `photos/gallery/manifest.json`
+### FAQ Accordion (Home)
+- Bootstrap accordion (`#faqAccordion`) with `data-bs-parent` for single-open behaviour
+- Each item: `.accordion-item .border-0 .mb-3 .shadow-sm .rounded`
+- Questions use `<h3>` tags for SEO heading hierarchy
+- Matches FAQPage schema in `<head>` — keep content in sync
 
 ### Review Carousel (About)
 - Auto-scrolling left to right, pauses on hover
@@ -105,15 +118,15 @@ Every section uses:
 
 ```
 minscons/
-├── index.html              # Home: hero + parallax photo + services grid + gallery reel
+├── index.html              # Home: hero + parallax + services + why choose + gallery reel + FAQ + service areas
 ├── about.html              # About: welcome + after photos + services detail + why choose us + reviews + CTA
 ├── contact.html            # Contact: hero + form (left) + details (right)
 ├── css/
 │   └── custom.css          # All custom styles
 ├── js/
-│   └── gallery.js          # Gallery reel logic
+│   └── gallery.js          # Gallery reel + lightbox modal logic
 ├── photos/
-│   ├── gallery/            # Before/after photos + manifest.json
+│   ├── gallery/            # Project photos + manifest.json
 │   └── site/               # Site asset images (home_page.jpg etc.)
 ├── images/                 # Logo, favicon
 ├── PLAN.md                 # Project plan
@@ -128,18 +141,12 @@ minscons/
 
 ## Adding New Gallery Photos
 
-1. Name files: `jobNo_suburb_before.jpg` and `jobNo_suburb_after.jpg`
-2. Drop into `photos/gallery/`
-3. Add entry to `photos/gallery/manifest.json`:
+1. Drop the photo into `photos/gallery/`
+2. Add an entry to `photos/gallery/manifest.json`:
    ```json
-   {
-     "jobNo": "3",
-     "suburb": "Narre Warren",
-     "builder": "",
-     "before": "3_narrewarren_before.jpg",
-     "after": "3_narrewarren_after.jpg"
-   }
+   {"file": "my_photo.jpg", "location": "Suburb Name"}
    ```
+3. Photos can be any size or aspect ratio — they display with `object-fit: cover` in the reel and `object-fit: contain` in the modal
 4. Commit and push
 
 ## Adding Site Images
@@ -150,8 +157,10 @@ Place in `photos/site/` — reference as `photos/site/filename.jpg`
 
 - Every page has: unique `<title>`, `<meta description>`, canonical URL, Open Graph tags
 - Geo meta tags: `AU-VIC`, `South East Melbourne`
-- `index.html` has Schema.org `LocalBusiness` JSON-LD
-- Target keywords: Melbourne rendering service, rendering specialist, licenced renderers, Southeast Melbourne, render construction
+- `index.html` has Schema.org JSON-LD: `LocalBusiness`, `WebSite`, `BreadcrumbList`, `FAQPage`
+- FAQ accordion content must stay in sync with FAQPage schema in `<head>`
+- Service Areas section lists 22 suburbs — keep in sync with `areaServed` in LocalBusiness schema
+- Target keywords: Melbourne rendering services, renderers Melbourne, rendering company Melbourne, cement rendering Melbourne, acrylic rendering Melbourne, rendering specialists Melbourne, rendering contractors Melbourne
 - `robots.txt` and `sitemap.xml` at project root
 
 ## Contact Form

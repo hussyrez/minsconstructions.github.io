@@ -1,16 +1,15 @@
 [
-  {
-    "jobNo": "1",
-    "suburb": "Cranbourne",
-    "builder": "",
-    "before": "1_cranbourne_before.jpg",
-    "after": "1_cranbourne_after.jpg"
-  },
-  {
-    "jobNo": "2",
-    "suburb": "Berwick",
-    "builder": "",
-    "before": "2_berwick_before.jpg",
-    "after": "2_berwick_after.jpg"
-  }
+  {"file": "2_berwick_after.jpg", "location": "Berwick"},
+  {"file": "12 Gardiner St Berwick (5).jpeg", "location": "Berwick"},
+  {"file": "15 Hazeldene Ct, Berwick  Victoria  3806 (2).jpeg", "location": "Berwick"},
+  {"file": "3 Passchendaele St Hampton (7).jpeg", "location": "Hampton"},
+  {"file": "Units 1\u201311, 8 Winifred Street, Essendon (14).jpeg", "location": "Essendon"},
+  {"file": "19 Eileen Street MOUNT WAVERLEY, VIC 3149 GF base (2).jpeg", "location": "Mount Waverley"},
+  {"file": "19 Eileen Street MOUNT WAVERLEY, VIC 3149 GF base (3).jpeg", "location": "Mount Waverley"},
+  {"file": "19 Eileen Street MOUNT WAVERLEY, VIC 3149 GF base (4).jpeg", "location": "Mount Waverley"},
+  {"file": "3 Centre Avenue WARRAGUL, VIC 3820 (14).jpeg", "location": "Warragul"},
+  {"file": "3 Centre Avenue WARRAGUL, VIC 3820 (4).jpeg", "location": "Warragul"},
+  {"file": "3 Centre Avenue WARRAGUL, VIC 3820 (9).jpeg", "location": "Warragul"},
+  {"file": "1_cranbourne_before.jpg", "location": "Cranbourne"},
+  {"file": "2_berwick_before.jpg", "location": "Berwick"}
 ]
