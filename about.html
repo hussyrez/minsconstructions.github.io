@@ -38,6 +38,58 @@
     }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://minsconstructions.com.au/#business",
+    "name": "Mins Constructions",
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "author": {"@type": "Person", "name": "Sarah M."},
+        "reviewBody": "Really happy with how the render turned out. The team was polite, cleaned up after themselves, and the finish looks great. Would recommend."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {"@type": "Rating", "ratingValue": "4"},
+        "author": {"@type": "Person", "name": "James T."},
+        "reviewBody": "Good job overall. Communication was clear from start to finish and the pricing was fair. Our house looks much better now."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "author": {"@type": "Person", "name": "Priya K."},
+        "reviewBody": "We had our front fence and house rendered. Very neat work and they finished on time. Honest and easy to deal with."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {"@type": "Rating", "ratingValue": "4"},
+        "author": {"@type": "Person", "name": "Daniel R."},
+        "reviewBody": "Solid rendering work at a reasonable price. The team was friendly and professional. Happy with the result."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "author": {"@type": "Person", "name": "Rachel L."},
+        "reviewBody": "Used Mins Constructions for our new build. Clean finish, no mess left behind, and they were flexible with timing. Very pleased."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+        "author": {"@type": "Person", "name": "Mark W."},
+        "reviewBody": "Had some patch repair work done and it blended in perfectly. Wouldn't hesitate to use them again for future work."
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "6",
+      "bestRating": "5"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
@@ -55,6 +107,14 @@
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="render-texture-melbourne.html">Render &amp; Texture</a></li>
+              <li><a class="dropdown-item" href="moulding-melbourne.html">Moulding</a></li>
+              <li><a class="dropdown-item" href="cladding-melbourne.html">Cladding</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
@@ -137,46 +197,47 @@
     </div>
   </section>
 
-  <!-- Our Rendering Services Section -->
+  <!-- Our Services Section -->
   <section class="py-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-10">
-          <h2 class="text-center mb-3">Our Rendering Services</h2>
-          <p class="text-center text-muted mb-5">We offer a range of rendering techniques and finishes to suit every style and budget</p>
+          <h2 class="text-center mb-3">Our Services</h2>
+          <p class="text-center text-muted mb-5">Comprehensive rendering, moulding, and cladding solutions for every project</p>
 
           <div class="row g-4 mb-5">
-            <div class="col-md-6">
-              <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title text-accent">Smooth Rendering</h5>
-                  <p class="card-text text-muted">A sleek, polished finish that gives your home a clean, modern look. Achieved using premium acrylic renders that provide a smoother complexion than traditional options. The base coat is prepared to a high standard to ensure an even, flat finish across the entire surface.</p>
+            <div class="col-md-4">
+              <a href="render-texture-melbourne.html" class="text-decoration-none">
+                <div class="card h-100 border-0 shadow-sm service-link-card">
+                  <div class="card-body">
+                    <div class="feature-accent mb-3"></div>
+                    <h5 class="card-title text-accent">Render &amp; Texture</h5>
+                    <p class="card-text text-muted">Cement rendering, acrylic rendering, texture coatings, float &amp; set, and sand &amp; cement repairs. Smooth or textured finishes for every surface.</p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="col-md-6">
-              <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title text-accent">Textured Rendering</h5>
-                  <p class="card-text text-muted">Add depth and character to your walls with a range of textured finishes. Choose from sand, sandstone, marble, stone chip, stipple, and more. Available in acrylic-bound designer finishing coats that offer durability and a distinctive look for any property.</p>
+            <div class="col-md-4">
+              <a href="moulding-melbourne.html" class="text-decoration-none">
+                <div class="card h-100 border-0 shadow-sm service-link-card">
+                  <div class="card-body">
+                    <div class="feature-accent mb-3"></div>
+                    <h5 class="card-title text-accent">Moulding</h5>
+                    <p class="card-text text-muted">Decorative window surrounds, cornices, columns, pilasters, keystones, and custom architectural moulding profiles to elevate your facade.</p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="col-md-6">
-              <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title text-accent">Pigmented Finish</h5>
-                  <p class="card-text text-muted">Rendering can be natural or coloured through an endless range of pigmented finishes. Our coloured acrylic coatings are mixed to your chosen shade, giving you full control over the final look &mdash; no painting required after application.</p>
+            <div class="col-md-4">
+              <a href="cladding-melbourne.html" class="text-decoration-none">
+                <div class="card h-100 border-0 shadow-sm service-link-card">
+                  <div class="card-body">
+                    <div class="feature-accent mb-3"></div>
+                    <h5 class="card-title text-accent">Cladding</h5>
+                    <p class="card-text text-muted">Hebel panels, EPS systems, fibre cement, and render-over-cladding solutions for weather-resistant, modern exteriors.</p>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title text-accent">Membrane Colouring</h5>
-                  <p class="card-text text-muted">An energy-efficient membrane coating system that reflects up to 50% of solar heat through infrared reflection. Combines a protective weather barrier with a quality colour finish &mdash; helping reduce cooling costs while keeping your home looking great.</p>
-                </div>
-              </div>
+              </a>
             </div>
           </div>
 

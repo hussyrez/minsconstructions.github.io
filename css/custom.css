@@ -257,6 +257,17 @@
   font-weight: 700;
 }
 
+.svc-detail-inner ul li a {
+  color: #444;
+  text-decoration: none;
+  border-bottom: 1px solid var(--mc-primary);
+  transition: color 0.2s ease;
+}
+
+.svc-detail-inner ul li a:hover {
+  color: var(--mc-primary);
+}
+
 @media (max-width: 768px) {
   .services-split {
     flex-direction: column;
@@ -585,6 +596,15 @@ footer a:hover {
   line-height: 1.75;
   margin-bottom: 0;
   font-size: 0.92rem;
+}
+
+.service-link-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-link-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1) !important;
 }
 
 .about-photo {
